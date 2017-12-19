@@ -1,6 +1,7 @@
 (ns aoc-2017.day2-spreadsheet
-  (:require [clojure.java.io :as io]
-            [clojure.string :as string]))
+  (:require [clojure.string :as string]
+            [aoc-2017.aoc-util :as util]))
+
 
 ;; file reader stuff
 (defn string->number-vec [s]
@@ -8,8 +9,7 @@
 
 ;; http://clojure-doc.org/articles/cookbooks/files_and_directories.html
 (defn seq-of-lines []
-  (with-open [rdr (io/reader (io/resource "input"))]
-    (doall (map string->number-vec (line-seq rdr)))))
+    (util/process-file-with "input" string->number-vec)) 
 
 
 (defn difference-for-coll [coll]
