@@ -5,15 +5,13 @@
 (defn passphrase->word-seq [passphrase]
   (seq (string/split passphrase #"\s")))
 
-(defn passphrase-valid? [passphrase]
-  (let [passphrase-seq (passphrase->word-seq passphrase)]
-    (= (distinct passphrase-seq) passphrase-seq)))
+(defn passphrase-valid? [passphrase-seq]
+    (= (distinct passphrase-seq) passphrase-seq))
 
 (defn count-valid-passphrases []
   (->> (util/process-file-with "day4-input" str)
+       (map passphrase->word-seq)
        (filter passphrase-valid?)
        (count)))
 
 ;; (count-valid-passphrases)
-
-(defn is-anagram? [])

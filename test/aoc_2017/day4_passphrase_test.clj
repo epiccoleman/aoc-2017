@@ -15,6 +15,6 @@
 
 
 (deftest passphrase-valid?-test
-  (is (passphrase-valid? "aa bb cc dd ee"))
-  (is (passphrase-valid? "aa bb cc dd aaa"))
-  (is (not (passphrase-valid? "aa bb cc dd aa"))))
+  (is (passphrase-valid? '("aa" "bb" "cc" "dd" "ee")))
+  (is (passphrase-valid? '("aa" "bb" "cc" "dd" "aaa")))
+  (is (not (passphrase-valid? '("aa" "bb" "cc" "dd" "aa")))))
