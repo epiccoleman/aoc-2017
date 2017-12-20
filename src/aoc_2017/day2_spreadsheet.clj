@@ -9,7 +9,7 @@
 
 ;; http://clojure-doc.org/articles/cookbooks/files_and_directories.html
 (defn seq-of-lines []
-    (util/process-file-with "input" string->number-vec)) 
+    (util/process-file-with "day2-input" string->number-vec)) 
 
 
 (defn difference-for-coll [coll]
